@@ -5,8 +5,7 @@ function randomIntFromInterval(min, max) {
   
   fetch('https://type.fit/api/quotes').then(data=>data.json()).then(Quote=>{
     const t = randomIntFromInterval(0, Quote.length-1)
-    const q=Quote[t].text;
-    const a=Quote[t].author;
+    const q=Quote[t].text+" - "+Quote[t].author;
     const d=document.getElementById('w')
-    d.innerHTML=q+"\n"+"-"+a;
+    d.innerHTML=q;
 })
